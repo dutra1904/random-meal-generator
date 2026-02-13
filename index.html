@@ -1,23 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <div id="description">
-        <h2>Sobre o Random Meal Generator</h2>
-        <p>Este programa exibe uma refeição aleatória obtida da API TheMealDB. 
-        Ao clicar no botão, ele busca uma nova refeição e exibe o nome, imagem, ingredientes e instruções de preparo. 
-        Além disso, se disponível, um vídeo do YouTube é incorporado para auxiliar no preparo da receita.</p>
-    </div>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gere refeições aleatórias com TheMealDB. Receitas completas com ingredientes e vídeos do YouTube.">
     <title>Random Meal Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Random Meal Generator</h1>
-    <button onclick="getRandomMeal()">Get Random Meal</button>
-    <div id="meal-container"></div>
-    
-    <script src="script.js"></script>
+    <header class="header">
+        <h1 class="header__title">Random Meal Generator</h1>
+        <p class="header__subtitle">Descubra receitas incríveis com um clique</p>
+    </header>
+
+    <main class="main">
+        <section class="description" aria-label="Sobre o aplicativo">
+            <h2 class="description__title">Sobre o Random Meal Generator</h2>
+            <p class="description__text">
+                Este aplicativo exibe refeições aleatórias da API TheMealDB. Ao clicar no botão,
+                uma nova receita é buscada com nome, imagem, ingredientes e instruções de preparo.
+                Quando disponível, um vídeo do YouTube é incorporado para auxiliar no preparo.
+            </p>
+        </section>
+
+        <section class="controls" aria-label="Controles">
+            <button type="button" class="btn btn--primary" id="btn-random-meal" aria-busy="false">
+                <span class="btn__text">Gerar Refeição Aleatória</span>
+                <span class="btn__loader" aria-hidden="true" hidden></span>
+            </button>
+        </section>
+
+        <section class="meal" id="meal-container" aria-live="polite" aria-atomic="true">
+            <p class="meal__placeholder">Clique no botão acima para gerar uma receita</p>
+        </section>
+    </main>
+
+    <script src="script.js" type="module"></script>
 </body>
 </html>
