@@ -1,55 +1,53 @@
-# 🍽️ Random Meal Generator
+# Mesa · Random Meal Generator
 
-O **Random Meal Generator** é um aplicativo simples que exibe uma refeição aleatória obtida da API TheMealDB. Com apenas um clique, você pode descobrir novas receitas, visualizar ingredientes, instruções de preparo e até assistir a um vídeo tutorial da receita.
+App em **React + TypeScript** que sugere uma receita na hora — com filtros, favoritos e o fluxo completo da [TheMealDB](https://www.themealdb.com/api.php).
 
-## 📸 Demonstração
+**Demo:** [dutra1904.github.io/random-meal-generator](https://dutra1904.github.io/random-meal-generator/)
 
-![image](https://github.com/user-attachments/assets/9c006be4-3fa2-4763-9a82-4725564f9f1d)
+## Demonstração
 
-## 🚀 Funcionalidades
+![Random Meal Generator exibindo uma receita com foto, ingredientes e interface escura](https://github.com/user-attachments/assets/9c006be4-3fa2-4763-9a82-4725564f9f1d)
 
-✅ Gerar uma refeição aleatória com nome, imagem, ingredientes e instruções.  
-✅ Assistir a um vídeo tutorial da receita (se disponível).  
-✅ Interface escura e moderna para melhor experiência.  
-✅ Design responsivo e dinâmico.  
+## Funcionalidades
 
-## 🛠️ Tecnologias Utilizadas
+- Gerar receita aleatória, evitando repetir a anterior
+- Filtrar por categoria e culinária (os dois ao mesmo tempo, quando possível)
+- Salvar favoritas no `localStorage` e reabrir sem nova busca
+- Copiar lista de ingredientes
+- Vídeo do YouTube, fonte oficial e tags da API
+- Skeleton de loading, erro com retry e última receita restaurada no reload
 
-- HTML
-- CSS
-- JavaScript (Fetch API)
+## Tecnologias
+
+- React 19
+- TypeScript
+- Vite
+- Vitest
 - [TheMealDB API](https://www.themealdb.com/api.php)
 
-## 📦 Como Executar o Projeto
+## Como executar
 
-### Acesse o link:
+```bash
+git clone https://github.com/dutra1904/random-meal-generator.git
+cd random-meal-generator
+npm install
+npm run dev
+```
 
+Abra o endereço que o Vite mostrar (com o base path `/random-meal-generator/`).
 
+```bash
+npm test
+npm run build
+```
 
-### Outra opção: 
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/random-meal-generator.git
-   ```
-2. Acesse a pasta do projeto:
-   ```bash
-   cd random-meal-generator
-   ```
-3. Abra o arquivo `index.html` no navegador.
+## Como funciona
 
-## 💡 Como Funciona?
-
-1. Ao carregar a página, uma breve descrição do projeto é exibida.
-2. O usuário clica no botão **"Random Meal"**.
-3. O app faz uma requisição à API e exibe uma refeição aleatória.
-4. São mostrados: nome da refeição, imagem, lista de ingredientes, modo de preparo e um vídeo tutorial (se houver).
-
-## 📌 Melhorias Futuras
-
-- Opção para buscar receitas por categoria.
-- Possibilidade de salvar receitas favoritas.
-- Melhorar a acessibilidade do design.
+1. `useMealExplorer` decide entre `/random.php`, `/filter.php` e `/lookup.php`.
+2. Categoria + culinária: busca a lista, abre alguns IDs em paralelo e fica com o primeiro que casa os dois.
+3. Favoritas e a última receita ficam no navegador.
+4. Ingredientes e o ID do YouTube passam por funções testadas. O React escapa o texto da API.
 
 ---
 
-Feito com ❤️ por [Maria Clara](https://github.com/duutra1904)
+Feito por [Maria Clara Dutra](https://github.com/dutra1904)
