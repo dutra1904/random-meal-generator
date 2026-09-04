@@ -21,7 +21,7 @@ App em **React + TypeScript** que sugere uma receita na hora — com filtros, fa
 
 - React 19
 - TypeScript
-- Vite
+- Vite 
 - Vitest
 - [TheMealDB API](https://www.themealdb.com/api.php)
 
@@ -34,12 +34,6 @@ npm install
 npm run dev
 ```
 
-Abra o endereço que o Vite mostrar (com o base path `/random-meal-generator/`).
-
-```bash
-npm test
-npm run build
-```
 
 ## Como funciona
 
